@@ -1,33 +1,50 @@
-# Sollution-project 
+#  2D Platformer Game — Final Java Project (LibGDX)
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+Welcome to the final course project: a 2D platformer game created using Java and the LibGDX framework. The goal is to showcase gameplay elements (movement, jumping, enemy collision, coin collection) and apply at least 5 software design patterns.
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+---
 
-## Platforms
+##  Features
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+-  Player can move left/right and jump using keyboard keys.
+-  Collect coins to increase score.
+-  Colliding with enemies reduces health.
+-  Player starts with 3 lives shown as hearts.
+-  Platforms and obstacles create level structure.
+-  Winning condition: collect all coins.
+-  Game Over screen shown if all lives are lost.
 
-## Gradle
+---
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+##  Controls
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+| Key       | Action             |
+|-----------|--------------------|
+| A / ←     | Move left          |
+| D / →     | Move right         |
+| Space     | Jump               |
+| R         | Restart (after win/lose) |
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+---
+
+##  Design Patterns Used
+
+| Pattern       | Description |
+|---------------|-------------|
+| Factory   | EntityFactory creates player, enemy, coin, heart, and platform objects. |
+| State     | Game states: PlayingState, GameOverState, and WinState. |
+| Strategy  | (Planned) Enemy movement logic as interchangeable strategies. |
+| Observer  | (Planned/Optional) Notifying systems on coin collected or damage. |
+| Singleton | (Optional) Can be used to manage shared data like score or configuration. |
+
+---
+
+## Technologies Used
+
+- LibGDX game framework
+- Java 17+
+- Textures in PNG format
+- Object-Oriented Design
+- IDE: IntelliJ IDEA (recommended)
+
+---
